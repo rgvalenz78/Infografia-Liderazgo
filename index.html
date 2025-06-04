@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Mesa de Liderazgo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .flow-arrow::after {
+            content: '►';
+            font-size: 1.5rem;
+            color: #90E0EF;
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2.5rem;
+            border-left: 4px solid #90E0EF;
+        }
+        .timeline-item:last-child {
+            border-left: 4px solid transparent;
+        }
+        .timeline-icon {
+            position: absolute;
+            left: -1.75rem;
+            top: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-[#03045E] text-white p-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight">Mesa de Liderazgo</h1>
+        <p class="mt-2 text-lg md:text-xl text-[#CAF0F8]">Claves para un Impacto Duradero y Efectivo</p>
+    </header>
+
+    <main class="container mx-auto p-6 md:p-12">
+
+        <section id="legado" class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-[#0077B6] mb-4">1. El Liderazgo y el Legado: Más Allá del Presente 🌳</h2>
+            <p class="max-w-3xl mx-auto text-lg mb-6">La primera sesión establece una verdad central: el verdadero liderazgo trasciende los resultados inmediatos. El valor de un líder se mide por su capacidad de asegurar la sucesión, preparando el camino para quienes le seguirán.</p>
+            <div class="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#00B4D8]">
+                <p class="text-2xl md:text-4xl font-bold text-[#03045E]">Ser un gran líder es</p>
+                <p class="text-5xl md:text-7xl font-black text-[#00B4D8] my-4 tracking-wider">DEJAR UN LEGADO</p>
+                <div class="mt-8 bg-[#CAF0F8] p-6 rounded-lg text-left max-w-2xl mx-auto">
+                    <h3 class="font-bold text-xl text-[#0077B6] mb-3">Reflexión Personal</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>Definir el legado por el que deseas ser recordado.</li>
+                        <li>Identificar momentos personales donde ejercieron liderazgo.</li>
+                        <li>Evaluar 21 cualidades de liderazgo (débiles, normales, extraordinarias) para enfocar su desarrollo.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="pilares" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0077B6] mb-4">2. Los Tres Pilares del Liderazgo Esencial 🏛️</h2>
+            <p class="max-w-3xl mx-auto text-lg text-center mb-8">La Sesión 2 profundiza en los cimientos que construyen un liderazgo sólido y confiable. Estos tres pilares son interdependientes y cruciales para ganar la confianza e inspirar la acción.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-2xl font-bold text-[#03045E] mb-2">Carácter</h3>
+                    <p class="text-gray-600">La base inquebrantable de la confianza.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">💖</div>
+                    <h3 class="text-2xl font-bold text-[#03045E] mb-2">Carisma</h3>
+                    <p class="text-gray-600">La habilidad de inspirar y atraer a otros.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-xl transition-shadow">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold text-[#03045E] mb-2">Compromiso</h3>
+                    <p class="text-gray-600">La dedicación inquebrantable a la visión y las metas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="caracter" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0077B6] mb-8">3. Carácter: El Fundamento de la Confianza</h2>
+            <p class="max-w-3xl mx-auto text-lg text-center mb-8">El carácter es el pilar central, manifestado a través de cualidades que generan credibilidad y respeto. Un líder con un carácter sólido inspira confianza y fomenta un entorno de alto rendimiento.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Integridad</h4>
+                    <p>Coherencia con valores, incluso en privado.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Honestidad</h4>
+                    <p>Transparencia y veracidad, siempre.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Responsabilidad</h4>
+                    <p>Asumir éxitos y fracasos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Valentía</h4>
+                    <p>Hacer lo correcto, enfrentar desafíos.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Empatía</h4>
+                    <p>Comprender y preocuparse por los demás.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#00B4D8]">
+                    <h4 class="font-bold text-lg text-[#0077B6]">Humildad</h4>
+                    <p>Reconocer limitaciones y aprender.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <h3 class="text-2xl font-bold text-center text-[#03045E] mb-6">Impacto del Carácter</h3>
+                <p class="text-center text-gray-600 mb-8">Un carácter sólido no es solo una cualidad deseable; es una herramienta estratégica que impacta directamente en los resultados y en la cultura de la organización. El gráfico a continuación muestra cómo un liderazgo basado en el carácter fortalece los cimientos del éxito.</p>
+                <div class="chart-container">
+                    <canvas id="caracterChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resiliencia" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0077B6] mb-4">4. Ley del Terreno Firme: La Resiliencia Construye el Carácter</h2>
+            <p class="max-w-3xl mx-auto text-lg text-center mb-12">La adversidad no solo revela, sino que construye el carácter. La siguiente secuencia ilustra cómo los desafíos se transforman en oportunidades para desarrollar habilidades y generar un retorno positivo, demostrando la resiliencia en acción.</p>
+            <div class="relative max-w-xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-[#00B4D8] text-white">🔥</div>
+                    <h4 class="font-bold text-xl text-[#03045E]">Adversidad: Esclavitud</h4>
+                    <p class="text-gray-600">Vendido a la esclavitud, enfrenta una pérdida total de libertad.</p>
+                    <p class="font-bold text-[#0077B6] mt-1">➡️ Retorno: Desarrolla capacidad de organización y administración en el palacio.</p>
+                </div>
+                <div class="timeline-item">
+                     <div class="timeline-icon bg-[#00B4D8] text-white">⚖️</div>
+                    <h4 class="font-bold text-xl text-[#03045E]">Adversidad: Falsa Acusación</h4>
+                    <p class="text-gray-600">Incriminado injustamente, su reputación es destruida.</p>
+                    <p class="font-bold text-[#0077B6] mt-1">➡️ Retorno: Usa su habilidad para discernir y resolver problemas complejos.</p>
+                </div>
+                 <div class="timeline-item">
+                    <div class="timeline-icon bg-[#00B4D8] text-white">⏳</div>
+                    <h4 class="font-bold text-xl text-[#03045E]">Adversidad: Olvido en Prisión</h4>
+                    <p class="text-gray-600">Abandonado y olvidado en la cárcel.</p>
+                    <p class="font-bold text-[#0077B6] mt-1">➡️ Retorno: Muestra sabiduría para interpretar el sueño del faraón y ofrecer soluciones.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-[#00B4D8] text-white">🌾</div>
+                    <h4 class="font-bold text-xl text-[#03045E]">Adversidad: Hambruna</h4>
+                    <p class="text-gray-600">Afronta una crisis nacional de siete años de hambruna.</p>
+                    <p class="font-bold text-[#0077B6] mt-1">➡️ Retorno: Implementa un plan estratégico que salva al país y genera riqueza.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon bg-[#00B4D8] text-white">🤝</div>
+                    <h4 class="font-bold text-xl text-[#03045E]">Adversidad: Reencuentro Familiar</h4>
+                    <p class="text-gray-600">Se enfrenta al regreso de quienes lo traicionaron.</p>
+                    <p class="font-bold text-[#0077B6] mt-1">➡️ Retorno: Muestra paciencia, perdón e integridad en sus tratos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="carisma" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0077B6] mb-4">5. Carisma: La Habilidad de Inspirar y Conectar 💖</h2>
+             <p class="max-w-3xl mx-auto text-lg text-center mb-8">El carisma es la capacidad de motivar y generar lealtad a través de una personalidad atractiva y convincente. No es solo ser agradable, sino poseer una combinación de cualidades que resuenan profundamente con las personas.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl text-[#03045E] mb-2">Influencia Inspiradora</h4>
+                    <p>Articular una visión apasionante que motive a otros a creer y a actuar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl text-[#03045E] mb-2">Conexión Emocional</h4>
+                    <p>Generar confianza y cercanía al comprender las necesidades y preocupaciones del equipo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl text-[#03045E] mb-2">Comunicación Persuasiva</h4>
+                    <p>Transmitir ideas de forma clara, convincente y emotiva, usando tanto el lenguaje verbal como no verbal.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-xl text-[#03045E] mb-2">Confianza en uno mismo</h4>
+                    <p>Irradiar seguridad y convicción, lo que genera confianza en la visión y en la dirección tomada.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="proceso" class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#0077B6] mb-4">6. La Ley del Proceso: El Viaje Hacia la Maestría</h2>
+            <p class="max-w-3xl mx-auto text-lg text-center mb-8">El liderazgo no es un destino, sino un viaje de desarrollo continuo. Este ciclo de aprendizaje muestra las cuatro fases que todo líder atraviesa para alcanzar la maestría y actuar con una intuición basada en el conocimiento profundo.</p>
+            <div class="flex flex-col md:flex-row items-center justify-center text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center mb-4 md:mb-0 w-full md:w-auto">
+                    <div class="text-2xl font-bold text-[#0077B6] mb-2">Fase 1</div>
+                    <p class="font-semibold">"Yo no sé lo que no sé"</p>
+                    <p class="text-sm text-gray-500 mt-1">Inconsciencia</p>
+                </div>
+                <div class="flow-arrow hidden md:block"></div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center mb-4 md:mb-0 w-full md:w-auto">
+                    <div class="text-2xl font-bold text-[#0077B6] mb-2">Fase 2</div>
+                    <p class="font-semibold">"Yo sé lo que no sé"</p>
+                    <p class="text-sm text-gray-500 mt-1">Conciencia</p>
+                </div>
+                <div class="flow-arrow hidden md:block"></div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center mb-4 md:mb-0 w-full md:w-auto">
+                    <div class="text-2xl font-bold text-[#0077B6] mb-2">Fase 3</div>
+                    <p class="font-semibold">"Yo sé y crezco"</p>
+                    <p class="text-sm text-gray-500 mt-1">Aplicación</p>
+                </div>
+                <div class="flow-arrow hidden md:block"></div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col justify-center w-full md:w-auto">
+                    <div class="text-2xl font-bold text-[#0077B6] mb-2">Fase 4</div>
+                    <p class="font-semibold">"Simplemente voy"</p>
+                    <p class="text-sm text-gray-500 mt-1">Maestría</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#03045E] text-white text-center p-8 mt-12">
+        <h2 class="text-3xl font-bold mb-4">Conclusión: Liderazgo para el Futuro 🚀</h2>
+        <p class="max-w-4xl mx-auto text-[#CAF0F8]">Un liderazgo efectivo se construye sobre el **legado**, se fundamenta en el **carácter** y se potencia con el **carisma**. Estas sesiones nos recuerdan que liderar es un acto de servicio, influencia y desarrollo constante, con el objetivo de construir confianza, inspirar equipos y alcanzar metas ambiciosas de manera sostenible.</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('caracterChart').getContext('2d');
+        const caracterChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Impulsa el Rendimiento', ['Fomenta la', 'Colaboración'], 'Inspira Respeto', 'Genera Confianza'],
+                datasets: [{
+                    label: 'Impacto del Carácter',
+                    data: [90, 85, 95, 100],
+                    backgroundColor: [
+                        '#00B4D8',
+                        '#90E0EF',
+                        '#0077B6',
+                        '#03045E'
+                    ],
+                    borderColor: [
+                        '#0077B6',
+                        '#00B4D8',
+                        '#03045E',
+                        '#0077B6'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                         grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            color: '#333'
+                        }
+                    },
+                    y: {
+                         grid: {
+                            display: false
+                        },
+                        ticks: {
+                            color: '#333',
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        },
+                        backgroundColor: '#03045E',
+                        titleFont: {
+                            size: 16
+                        },
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 15,
+                        cornerRadius: 5,
+                        displayColors: false
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
